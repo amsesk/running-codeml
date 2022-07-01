@@ -23,10 +23,15 @@ dnds_hists.R
 
 ### Read the significant orthogroup lists and collect significant orthogroup fastas
 ```
+while read p; do
 cp /nfs4/BPP/Uehling_Lab/amsesk/jessie_figure_request/dnds/orthofinder/Single_Copy_Orthologue_Sequences/${p}.fa branch_sig_orthogroups/0.05/.
 done < <(cat branch_modles_sig_orthogroups.tsv | cut -f1 | grep -v "^$")
+
+while read p; do
 cp /nfs4/BPP/Uehling_Lab/amsesk/jessie_figure_request/dnds/orthofinder/Single_Copy_Orthologue_Sequences/${p}.fa branch_sig_orthogroups/0.01/.
 done < <(cat branch_modles_sig_orthogroups.tsv | cut -f2 | grep -v "^$")
+
+while read p; do
 cp /nfs4/BPP/Uehling_Lab/amsesk/jessie_figure_request/dnds/orthofinder/Single_Copy_Orthologue_Sequences/${p}.fa branch_sig_orthogroups/0.001/.
 done < <(cat branch_modles_sig_orthogroups.tsv | cut -f3 | grep -v "^$")
 ```
